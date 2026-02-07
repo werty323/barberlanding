@@ -1,0 +1,60 @@
+.services {
+  padding: 80px 0;
+  background-color: var(--color-black);
+}
+
+.services__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.services__category {
+  font-family: var(--font-accent);
+  color: var(--color-gold);
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Строка прайса */
+.price-list__item {
+  display: flex; /* ВОТ ЭТО ДЕЛАЕТ ЦЕНУ В СТРОКУ */
+  align-items: flex-end;
+  margin-bottom: 20px;
+  color: var(--color-gray);
+  font-size: 18px;
+}
+
+.price-list__item:hover .price-list__name {
+  color: var(--color-gold);
+}
+
+.price-list__name {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.price-list__dots {
+  flex-grow: 1; /* Растягивает точки */
+  border-bottom: 1px dotted rgba(160, 160, 160, 0.4);
+  margin: 0 10px 5px 10px;
+}
+
+.price-list__cost {
+  font-weight: 700;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.services__footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .services__wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+}
