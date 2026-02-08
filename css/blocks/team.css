@@ -1,0 +1,112 @@
+.team {
+  padding: var(--section-gap) 0;
+  background-color: var(--color-black);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.team-card {
+  position: relative;
+  /* Додамо ефект появи при скролі (опціонально) */
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px); /* Легке спливання картки */
+}
+
+/* Блок, де живе іконка */
+.team-card__visual {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Акуратна висота */
+  margin-bottom: 25px;
+
+  /* Робимо рамку ледь помітною, щоб акцент був на іконці */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, #111, #0a0a0a); /* Легкий об'єм */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+/* --- СТИЛЬ ІКОНОК (NIKE STYLE) --- */
+.team-card__icon {
+  width: 80px; /* Не гігантські */
+  height: 80px;
+
+  /* ВАЖЛИВО: Колір ліній */
+  color: var(--color-gold);
+
+  /* Якщо раптом щось піде не так, примусово задаємо: */
+  stroke: var(--color-gold);
+  fill: none; /* Прозорі всередині */
+
+  transition: all 0.5s ease;
+}
+
+/* ОВЕРЛЕЙ */
+.team-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Напівпрозорий чорний */
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px); /* Розмиття фону (ефект скла) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card__info {
+  text-align: center;
+}
+
+.team-card__name {
+  font-family: var(--font-accent);
+  font-size: 24px;
+  color: var(--color-white);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.team-card__role {
+  font-size: 14px;
+  color: #666; /* Більш спокійний сірий */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* --- HOVER EFFECTS --- */
+.team-card:hover .team-card__overlay {
+  opacity: 1;
+}
+
+.team-card:hover .team-card__icon {
+  transform: scale(0.9) rotate(-10deg); /* Іконка трохи зменшується і повертається */
+  color: var(--color-white); /* При наведенні стає білою */
+  stroke: var(--color-white);
+}
+
+.team-card:hover .team-card__visual {
+  border-color: var(--color-gold); /* Рамка загоряється золотом */
+}
+
+/* АДАПТИВ */
+@media (min-width: 900px) {
+  .team__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
