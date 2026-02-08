@@ -1,0 +1,12 @@
+:root {
+  --color-black: #0a0a0a;
+  --color-gold: #d4af37;
+  --color-gold-hover: #ffd700;
+  --color-white: #ffffff;
+  --color-gray: #a0a0a0;
+
+  --font-main: "Inter", sans-serif;
+  --font-accent: "Playfair Display", serif;
+
+  --section-gap: 120px;
+}
